@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="miao1007.github.com.bindersample">
+
+  <permission android:label="the remote service sample"
+      android:protectionLevel="dangerous"
+      android:name="miao1007.github.com.bindersample.PERMISSIONS.READ_DATA">
+  </permission>
+
+  <application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:theme="@style/AppTheme">
+    <service android:name=".aidl.RemoteService" android:exported="true" android:process=":remote" android:permission="miao1007.github.com.bindersample.PERMISSIONS.READ_DATA">
+      <intent-filter>
+        <action android:name="miao1007.github.com.bindersample.IRemoteService"/>
+      </intent-filter>
+    </service>
+  </application>
+
+</manifest>

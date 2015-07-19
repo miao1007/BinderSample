@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion 22
+  buildToolsVersion "22.0.1"
+
+  defaultConfig {
+    //    applicationId "miao1007.github.com.bindersample"
+    minSdkVersion 14
+    targetSdkVersion 22
+    versionCode 1
+    versionName "1.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  //butterknife
+  lintOptions {
+    disable 'InvalidPackage'
+  }
+  packagingOptions {
+    exclude 'META-INF/services/javax.annotation.processing.Processor'
+  }
+}
+
+dependencies {
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile 'com.android.support:appcompat-v7:22.2.0'
+  compile files('libs/org.simalliance.openmobileapi.jar')
+
+}
